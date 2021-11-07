@@ -6,7 +6,10 @@
 - [manage.py](manage.py): A command-line utility that lets you interact with this Django project in various ways.
 - The inner **Django101**/ directory is the actual Python package for project.
 - [Django101/__init__.py](./Django101/__init__.py): An empty file that tells Python that this directory should be considered a Python package.
-- [Django101/settings.py](./Django101/settings.py): Settings/configuration for this Django project. 
+- [Django101/settings.py](./Django101/settings.py): Settings/configuration for this Django project.
+  - DATABASES:
+    - ENGINE – Either 'django.db.backends.sqlite3', 'django.db.backends.postgresql', 'django.db.backends.mysql', or 'django.db.backends.oracle'. Other backends are also available. 
+    - NAME – The name of your database. If you’re using SQLite, the database will be a file on your computer; in that case, NAME should be the full absolute path, including filename, of that file. The default value, BASE_DIR / 'db.sqlite3', will store the file in your project directory.
 - [Django101/urls.py](./Django101/urls.py): The URL declarations for this Django project; a “table of contents” of your Django-powered site.
 - [Django101/asgi.py](./Django101/asgi.py): An entry-point for ASGI-compatible web servers to serve your project.
 - [Django101/wsgi.py](./Django101/wsgi.py): An entry-point for WSGI-compatible web servers to serve your project. See How to deploy with WSGI for more details.
@@ -26,6 +29,14 @@ An app is a Web application that does something – e.g., a Weblog system, a dat
 - **kwargs**: Arbitrary keyword arguments can be passed in a dictionary to the target view. We aren’t going to use this feature of Django in the tutorial.
 - **name**: Naming your URL lets you refer to it unambiguously from elsewhere in Django, especially from within templates. This powerful feature allows you to make global changes to the URL patterns of your project while only touching a single file. .
 
+### Model
+A model is the single, definitive source of information about your data. It contains the essential fields and behaviors of the data you’re storing. Django follows the DRY Principle. The goal is to define your data model in one place and automatically derive things from it.
 
+#### To include the app in our project, we need to add a reference to its configuration class in the INSTALLED_APPS setting. The PollsConfig class is in the polls/apps.py file, so its dotted path is 'polls.apps.PollsConfig'. Edit the mysite/settings.py file and add that dotted path to the INSTALLED_APPS setting. It’ll look like this:
+
+### makemigrations vs migrate
+#### Change your models (in models.py).
+#### Run python manage.py makemigrations to create migrations for those changes
+#### Run python manage.py migrate to apply those changes to the database.
 
 
