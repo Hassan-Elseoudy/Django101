@@ -39,4 +39,4 @@ A model is the single, definitive source of information about your data. It cont
 #### Run python manage.py makemigrations to create migrations for those changes
 #### Run python manage.py migrate to apply those changes to the database.
 
-
+**py manage.py createsuperuser** used to create superusers
