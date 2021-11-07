@@ -40,3 +40,7 @@ A model is the single, definitive source of information about your data. It cont
 #### Run python manage.py migrate to apply those changes to the database.
 
 **py manage.py createsuperuser** used to create superusers
+
+#### Your project’s TEMPLATES setting describes how Django will load and render templates. The default settings file configures a DjangoTemplates backend whose APP_DIRS option is set to True. By convention DjangoTemplates looks for a “templates” subdirectory in each of the INSTALLED_APPS.
+
+
